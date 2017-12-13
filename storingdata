@@ -1,0 +1,23 @@
+import com.firebase.client.Firebase;
+
+public class MainActivity extends AppCompatActivity {
+private EditText mtext;
+    private Button mbutton;
+    private Firebase mroot;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        mtext = (EditText)findViewById(R.id.valuefield);
+        mbutton = (Button)findViewById(R.id.addbtn);
+        mroot= new Firebase("https://fireapp-39029.firebaseio.com/");
+        mbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String str = mtext.getText().toString();
+                Firebase child =  mroot.child("team1");
+
+            }
+        });
+}
+}
